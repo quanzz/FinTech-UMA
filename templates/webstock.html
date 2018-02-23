@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>金融数据分析 - 子鼠系统</title>
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/webstock.css"/>
+</head>
+<body style="font-family:'微软雅黑';">
+
+
+<!-- 网页头部 -->		
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand" style="padding:10;">金融分析平台</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right" style="margin-top:0">
+				<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-list"></span> 功能</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-fire"></span> 案例</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+			</ul>	
+		</div>
+	</div>
+</nav>
+
+<div id="frame-analyze" style="margin-top: 58px;">
+ 
+
+	<!-- 网页侧边栏 -->
+	<div class="col-md-2">
+
+		<!-- 股票代码输入框 -->
+		<div class="input-group" style="margin-bottom: 10px;">
+			<span class="input-group-addon">股票代码</span>
+			<input type="text" class="form-control"></input>
+		</div>
+
+		<!-- nav是导航样式， nav-pills是胶囊样式，nav-stacked是垂直样式 -->
+		<ul class="nav nav-pills nav-stacked">
+			<!-- 默认显示基本信息 -->
+			<li><a href="#content-basic" data-toggle="tab">
+				<span class="glyphicon glyphicon-list-alt"></span> 基本信息</a></li>
+			<li><a href="#content-time" data-toggle="tab">
+				<span class="glyphicon glyphicon-signal"></span> 时序分析</a></li>
+			<li><a href="#content-frequent" data-toggle="tab">
+				<span class="glyphicon glyphicon-random"></span> 频域分析</a></li>
+			<li><a href="#content-factor" data-toggle="tab">
+				<span class="glyphicon glyphicon-th"></span> 因子分析</a></li>
+			<li class="active"><a href="#content-chan" data-toggle="tab">
+				<span class="glyphicon glyphicon-adjust"></span> 缠论分析</a></li>
+			<li><a href="#content-capital" data-toggle="tab">
+				<span class="glyphicon glyphicon-transfer"></span> 资金分析</a></li>
+	</div>
+
+    <!-- 主要界面 -->
+    <!-- 
+		用tab-content样式是标签内容，子标签用tab-pane，
+		那么就可以隐藏每个标签了，上面的a标签中用data-toggle
+		添加事件类型就可以访问每个标签了。
+    -->
+    <div class="col-md-10 tab-content">
+        <!-- 基本信息：
+			包含k线信息
+         -->
+        <div class="tab-pane" id="content-basic">
+        	<!-- 放置echats图形的dom -->
+        	<div id="k-lines" style="margin-left:0px; padding-left: 0px;width: 1000px;height:400px;"></div>
+        </div>
+
+        <div class="tab-pane" id="content-time"><h5>时序分析，待开发</h5></div>
+        <div class="tab-pane" id="content-frequent"><h5>频域分析，待开发</h5></div>
+        <div class="tab-pane" id="content-factor"><h5>因子分析，待开发</h5></div>
+
+        <div class="tab-pane active" id="content-chan">
+        	<div id="chan" style="margin-left:0px; padding-left: 0px;width: 1000px;height:500px;"></div>
+			<div>
+				对于当前个股的缠论体系评分。
+			</div>
+        </div>
+
+        <div class="tab-pane" id="content-capital"><h5>资金分析，待开发</h5></div>
+    </div>
+
+
+ </div>
+
+
+<script src="/static/js/jquery-3.3.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/echarts.js"></script>
+<script src="/static/js/k.js"></script>
+<script src="/static/js/chan.js"></script>
+</body>
+</html>
